@@ -35,8 +35,8 @@ const sampleData = {
       github: "https://github.com/Octaviocossy",
     },
   },
-  summary:
-    "Desarrollador de productos digitales con experiencia en web y móvil. Manejo de React.js, TypeScript, React Native, Next.js, Node.js, .NET, Angular, Tauri, React Query, Zustand, Redux, Prisma ORM, Zod y Turborepo. Conocimientos en APIs e IA. Profesional proactivo y orientado a resultados.",
+  // summary:
+  // "Desarrollador de productos digitales con experiencia en web y móvil. Manejo de React.js, TypeScript, React Native, Next.js, Node.js, .NET, Angular, Tauri, React Query, Zustand, Redux, Prisma ORM, Zod y Turborepo. Conocimientos en APIs e IA. Profesional proactivo y orientado a resultados.",
   education: [
     {
       institution: "UAI - Universidad Abierta Interamericana",
@@ -56,31 +56,59 @@ const sampleData = {
       company: "Janus Automation",
       role: "Ssr. Fullstack Developer",
       period: "Dic. 2022 - Actualidad",
+      role_description:
+        "Desarrollo soluciones para clientes industriales, participando en todas las fases del ciclo de vida del software: desde el análisis y diseño hasta la implementación y puesta en producción. Actúo como referente en tecnologías como React y Angular, siendo punto de apoyo técnico para el equipo. También aporto en la definición de buenas prácticas y lineamientos de desarrollo, garantizando aplicaciones escalables, fáciles de mantener y alineadas con los objetivos del negocio.",
       description:
-        "• Tracking de técnicos y órdenes\n• Tracking de técnicos y órdenes (migración a React Native) \n• Sistema de monitoreo de pérdida de peso en báscula \n• Dashboard de eventos y configuración de equipos internos \n• Rodeo Crane Reporting System (Dashboard gestión de grúas en tiempo real) \n• Dashboard gestión piso de planta (Acería)",
+        "• Tracking de técnicos y órdenes - (React, TypeScript, Chakra UI) \n• Tracking de técnicos y órdenes (migración a React Native) - (React Native, TypeScript, Native Base) \n• Sistema de monitoreo de pérdida de peso en báscula - (React, NodeJS, ExpressJS, SQL Server) \n• Dashboard de eventos y configuración de equipos internos - (React, TypeScript, TailwindCSS) \n• Rodeo Crane Reporting System (Dashboard gestión de grúas en tiempo real) - (Angular, PrimeNG, .NET, SQL Server) \n• Dashboard gestión piso de planta (Acería) - (Angular, PrimeNG, .NET, SQL Server)",
     },
     {
       company: "Gestioner Soft",
       role: "React Developer",
       period: "Jul. 2022 - Dic. 2022",
-      description: "• Gestor de Facturas Electrónicas",
+      role_description:
+        "Pasante en el área de desarrollo de software, participé en la creación de una aplicación web para el manejo de facturas electrónicas.",
+      description:
+        "• Gestor de Facturas Electrónicas - (React, JavaScript, TailwindCSS)",
     },
   ],
   projects: [
     {
       title: "Kaptia",
+      technologies: [
+        "NextJS",
+        "TypeScript",
+        "TailwindCSS",
+        "Node.js",
+        "Express.js",
+        "Prisma ORM",
+        "PostgreSQL",
+      ],
       description:
         "Automatiza el análisis de cartera para empresas contables, financieras y de gestión de personal.",
-      link: "https://kaptia.com.ar/",
     },
     {
       title: "MDG",
+      technologies: [
+        "NextJS",
+        "React Query",
+        "TypeScript",
+        "TailwindCSS",
+        "Prisma ORM",
+        "PostgreSQL",
+      ],
       description:
         "Plataforma médica integral que permite a profesionales de la salud gestionar datos de pacientes, generar reportes médicos en PDF y mantener historial completo de registros.",
       link: "",
     },
     {
       title: "GEVP",
+      technologies: [
+        "NextJS",
+        "TypeScript",
+        "TailwindCSS",
+        "Prisma ORM",
+        "PostgreSQL",
+      ],
       description:
         "Gestor de socios para el Club Gimnasia y Esgrima de Villa del Parque. Es una aplicación web que permite al club gestionar socios y actividades.",
       link: "",

@@ -51,10 +51,12 @@ export function CVPreview({ data, language = "en" }: CVPreviewProps) {
       </div>
 
       {/* Professional Summary */}
-      <div className="mb-4">
-        <h2 className="text-base font-bold mb-2 border-b border-gray-200 pb-1">{t.professionalSummary}</h2>
-        <p className="text-sm leading-relaxed">{data.summary}</p>
-      </div>
+      {data.summary && (
+        <div className="mb-4">
+          <h2 className="text-base font-bold mb-2 border-b border-gray-200 pb-1">{t.professionalSummary}</h2>
+          <p className="text-sm leading-relaxed">{data.summary}</p>
+        </div>
+      )}
 
       {/* Education */}
       <div className="mb-4">
@@ -82,6 +84,9 @@ export function CVPreview({ data, language = "en" }: CVPreviewProps) {
               <div>
                 <h3 className="font-semibold text-sm">{exp.company}</h3>
                 <p className="text-sm font-medium">{exp.role}</p>
+                {exp.role_description && (
+                  <p className="text-xs">{exp.role_description}</p>
+                )}
               </div>
               <span className="text-sm text-gray-600">{exp.period}</span>
             </div>
@@ -97,6 +102,11 @@ export function CVPreview({ data, language = "en" }: CVPreviewProps) {
           <div key={index} className="mb-2">
             <h3 className="font-semibold text-sm">{project.title}</h3>
             <p className="text-sm leading-relaxed">{project.description}</p>
+            {project.technologies && project.technologies.length > 0 && (
+              <p className="text-xs text-gray-600 mt-1">
+                <span className="font-medium">Technologies:</span> {project.technologies.join(", ")}
+              </p>
+            )}
             {project.link && <p className="text-sm text-gray-600">Link: {project.link}</p>}
           </div>
         ))}

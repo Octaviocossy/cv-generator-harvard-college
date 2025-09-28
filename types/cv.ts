@@ -11,7 +11,7 @@ export interface CVData {
       portfolio?: string
     }
   }
-  summary: string
+  summary?: string
   education: Array<{
     institution: string
     degree: string
@@ -21,12 +21,14 @@ export interface CVData {
   experience: Array<{
     company: string
     role: string
+    role_description?: string
     period: string
     description: string
   }>
   projects: Array<{
     title: string
     description: string
+    technologies?: string[]
     link?: string
   }>
   skills: {

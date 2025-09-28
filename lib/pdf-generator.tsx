@@ -17,6 +17,7 @@ export async function generatePDF(data: CVData, language: "en" | "es" = "en") {
       skills: "SKILLS",
       languages: "LANGUAGES",
       technicalSkills: "Technical Skills",
+      technologies: "Technologies",
       softSkills: "Soft Skills",
     },
     es: {
@@ -27,6 +28,7 @@ export async function generatePDF(data: CVData, language: "en" | "es" = "en") {
       skills: "HABILIDADES",
       languages: "IDIOMAS",
       technicalSkills: "Technical Skills",
+      technologies: "Tecnologías",
       softSkills: "Soft Skills",
     },
   }
@@ -190,10 +192,12 @@ export async function generatePDF(data: CVData, language: "en" | "es" = "en") {
           </div>
         </div>
 
+        ${data.summary ? `
         <div class="section">
           <h2 class="section-title">${t.professionalSummary}</h2>
           <div class="section-content">${data.summary}</div>
         </div>
+        ` : ""}
 
         <div class="section">
           <h2 class="section-title">${t.education}</h2>
@@ -226,8 +230,9 @@ export async function generatePDF(data: CVData, language: "en" | "es" = "en") {
               <div class="entry">
                 <div class="entry-header">
                   <div>
-                    <div class="entry-title">${exp.company}</div>
-                    <div class="entry-subtitle">${exp.role}</div>
+                    <div class="entry-title">${exp.role} - ${exp.company}</div>
+                    <div class="entry-subtitle"></div>
+                    ${exp.role_description ? `<div style="font-size: 11px;">${exp.role_description}</div>` : ""}
                   </div>
                   <div class="entry-period">${exp.period}</div>
                 </div>
@@ -248,7 +253,8 @@ export async function generatePDF(data: CVData, language: "en" | "es" = "en") {
               <div class="entry">
                 <div class="entry-title">${project.title}</div>
                 <div class="entry-description">${project.description}</div>
-                ${project.link ? `<div style="font-size: 10px; color: #666;">Link: ${project.link}</div>` : ""}
+                ${project.technologies && project.technologies.length > 0 ? `<div style="font-size: 10px; color: #666; margin-top: 2px;"><strong>${t.technologies}:</strong> ${project.technologies.join(", ")}</div>` : ""}
+                ${project.link ? `<div style="font-size: 10px; color: #666;"><strong>Link:</strong> ${project.link}</div>` : ""}
               </div>
             `,
               )
